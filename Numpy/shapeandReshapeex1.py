@@ -12,8 +12,13 @@
 import numpy as np 
 arr = input().strip().split()
 arr = np.array(arr, dtype=int)
+rows = int(input("Enter row number only"))
+columns = int(input("Enter column number only"))
 print(arr)
 print(arr.shape)
-r = arr.reshape(3,3)
-print(r)
+if len(arr)!= rows * columns:
+    print(f"cannot reshape array of size {len(arr)} in to shape({rows},{columns})")
+else:
+ r = arr.reshape(rows,columns)
+ print(r)
 
